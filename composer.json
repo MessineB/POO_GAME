@@ -1,0 +1,9 @@
+{
+    "name": "messi/test_poo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
