@@ -7,6 +7,6 @@ class Hero {
     public $armor = 0;
 
     public function test() {
-        echo "Fonction Hero";
+        return $this->healthpoint;
     }
    }

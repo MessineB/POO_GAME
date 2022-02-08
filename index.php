@@ -4,10 +4,13 @@ use App\Hero;
 use App\BonusHP;
 use App\Bonusarmor;
 use App\Attack;
+use App\Ennemy;
 require 'vendor/autoload.php';
 
 $var = new Hero;
-$var->test();
+$armor = $var->test();
+echo $armor;
+
 
 $bon = new BonusHP;
 $bon->gainhp();

@@ -5,7 +5,6 @@ namespace App;
         public $bonusarmor=15;
 
         public function gainarmor() {
-                echo "Fonction bonus armor";
+                return $this->bonusarmor;
         }
-
     }
