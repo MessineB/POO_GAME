@@ -2,7 +2,7 @@
 namespace App;
 
 
-class Lieutenantmninion extends Character{
+class Lieutenantminion extends Character{
 
     public function __construct() {
         $this->hp=30;

@@ -9,3 +9,4 @@ class Chefminion extends Character{
         $this->damage=100;
     }
 }
+
