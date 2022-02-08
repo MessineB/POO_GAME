@@ -1,12 +1,18 @@
 <?php
 
  namespace App; 
-class Hero {
-    public $healthpoint = 200;
-    public $damage = 15;
+class Hero extends Character{
     public $armor = 0;
+    public $bonusHP=50;
+    public $bonusarmor=15;
 
-    public function herohp() {
-        return $this->healthpoint;
+
+    public function __construct() {
+        $this->hp=200;
+        $this->damage=15;
+    }
+    
+    public function armor() {
+        return $this->armor;
     }
    }

@@ -1,17 +1,11 @@
 <?php
 
 namespace App;
-class Minion {
-    public $minionhp = 10;
-    public $minionattack = 10;
+class Minion extends Character{
 
-    public function attackminion(){
-        return $this->minionattack;
+    public function __construct() {
+        $this->hp=10;
+        $this->damage=10;
     }
-
 }
 
-class Chefmninion{
-    public $chefminionhp = 100;
-    public $chefminionattack = 100;
-}
