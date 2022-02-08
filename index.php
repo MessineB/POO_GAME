@@ -3,14 +3,13 @@
 use App\Hero;
 use App\BonusHP;
 use App\Bonusarmor;
-use App\Attack;
 use App\Ennemy;
+
 require 'vendor/autoload.php';
 
 $var = new Hero;
-$armor = $var->test();
-echo $armor;
-
+$herohp = $var->hhp();
+echo $herohp;
 
 $bon = new BonusHP;
 $bon->gainhp();
@@ -18,5 +17,5 @@ $bon->gainhp();
 $ok = new Bonusarmor;
 $ok->gainarmor();
 
-$aie = new Attack;
-$aie->aie();
+$test = new Minion;
+$aff = $test->statminion();

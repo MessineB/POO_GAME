@@ -6,7 +6,7 @@ class Hero {
     public $damage = 15;
     public $armor = 0;
 
-    public function test() {
+    public function herohp() {
         return $this->healthpoint;
     }
    }
