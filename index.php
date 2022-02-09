@@ -206,7 +206,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
     // Bonus hp;
     if ( $random == 2 ) {
         // Bonus hp pour le hero
-        $hero->bonushp();
+        $hero->bonushp(); 
         echo "GAIN D'ARMURE ET COMBAT <br>";
         $chef->combat($hero->damage());
         echo "Le chef a desormais : ", $chef->hp ," hp <br>"; 
@@ -254,7 +254,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
     }
     if ( $chef->hp <= 0) {
         echo "<strong> J'ai gagné la bagarre ! </strong> <br>";
-        echo "<img src='bagarre.jpg'>";
+        echo "<img src='bagarre.jpg' alt ='Un blond pas tres musclé gagne la bagarre'>";
         $tour=500;
     } 
     if ( $hero->hp <= 0) {
