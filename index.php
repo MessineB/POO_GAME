@@ -254,6 +254,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
     }
     if ( $chef->hp <= 0) {
         echo "<strong> J'ai gagné la bagarre ! </strong> <br>";
+        echo "<img src='bagarre.jpg'>";
         $tour=500;
     } 
     if ( $hero->hp <= 0) {
@@ -261,6 +262,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
         $tour=500;
     }
 }
+
 
 
 
