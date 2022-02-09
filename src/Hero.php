@@ -4,6 +4,7 @@
 class Hero extends Character{
     public $bonushp=50;
     public $bonusarmor=15;
+    public $critique=50;
 
     public function __construct()
     {
