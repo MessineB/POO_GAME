@@ -15,6 +15,8 @@ $lieutenant = new Lieutenantminion;
 
 // Fonction qui fait le calcul des degats que le hero prend , L'attaquant est a mettre en paramettre.
 $hero->combat($chef->damage());
+$minion->combat($hero->damage());
+
 
 // Bonus armure pour le hero
 $hero->bonusarmor();

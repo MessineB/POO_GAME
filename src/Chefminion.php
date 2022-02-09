@@ -7,6 +7,7 @@ class Chefminion extends Character{
     public function __construct() {
         $this->hp=100;
         $this->damage=100;
+        $this->armor=0;
     }
 }
 

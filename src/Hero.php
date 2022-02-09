@@ -2,7 +2,6 @@
 
  namespace App; 
 class Hero extends Character{
-    public $armor = 15;
     public $bonushp=50;
     public $bonusarmor=15;
 
