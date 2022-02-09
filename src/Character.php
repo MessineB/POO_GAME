@@ -28,7 +28,7 @@ class Character {
             }
             else 
             {
-                echo "L'armure du hero a subi des degats mais tiens encore le coup il reste", $this->armor, "<br>";
+                echo "L'armure du hero a subi des degats mais tiens encore le coup il reste encore", $this->armor, " point d'armure <br>";
             }
         }
     }

@@ -21,13 +21,178 @@ $lieutenant = new Lieutenantminion;
 // Fonction qui me donne un nombre aleatoire entre le premier et le second nombre.
 $random = random_int(1,5);
 
-// Combat contre le boss en 5 tours
 
+
+echo "<strong> Bagarre contre le Minion</strong> <br> <br>";
+for ($tour=1 ; $tour < 6 ; $tour++) 
+{
+    $random = random_int(1,5);
+
+    // Critique du hero
+    if ( $random == 1 ) {
+        echo "COUP CRITIQUE ! <br>  ";
+        $minion->combat(5*$hero->damage());
+        echo "Le chef a desormais : ", $minion->hp ," hp <br>"; 
+        $hero->combat($minion->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+        
+    } 
+    // Bonus hp;
+    if ( $random == 2 ) {
+        // Bonus hp pour le hero
+        $hero->bonushp();
+        echo "GAIN D'ARMURE ET COMBAT <br>";
+        $minion->combat($hero->damage());
+        echo "Le minion a desormais : ", $minion->hp ," hp <br>"; 
+        $hero->combat($minion->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+       
+    }
+    // Bonus armor
+    if ( $random == 3 ) {
+        echo "GAIN D'ARMURE ET COMBAT <br>";
+        // Bonus armure pour le hero
+        $hero->bonusarmor();
+        $minion->combat($hero->damage());
+        echo "Le lieutenant a desormais : ", $minion->hp ," hp <br>"; 
+        $hero->combat($minion->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+    }
+    // Rien de particulier
+    if ( $random == 4 ) {
+        echo "ECHANGE DE COUP AVEC LE MINION <br>";
+        $minion->combat($hero->damage());
+        echo "Le chef a desormais : ", $minion->hp ," hp <br>"; 
+        $hero->combat($minion->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+    }
+
+    if ( $random == 5 ) {
+        echo "ESQUIVE DU HERO <br>";
+        $minion->combat($hero->damage());
+        echo "Le minion a desormais : ", $minion->hp ," hp <br>"; 
+        echo "Notre hero a : ", $hero->hp , " hp car l'ennemi a utilisé trempette <br> <br>";
+    }
+
+
+    // If pour la victoire et la defaite
+    
+
+    if  (( $minion->hp <= 0) && ( $hero->hp <= 0) ) {
+
+        echo "<strong> Match nul ! </strong> <br> <br>";
+        $tour=500;
+
+    }
+    if ( $minion->hp <= 0) {
+        echo "<strong> Victoire ! </strong> <br> <br>";
+        $tour=500;
+    } 
+    if ( $hero->hp <= 0) {
+        echo "<strong> Mort du heros ... Rip </strong> <br> <br>";
+        $tour=500;
+    }
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////
+
+echo "<strong> Bagarre contre le lieutenant</strong> <br> <br>";
+for ($tour=1 ; $tour < 6 ; $tour++) 
+{
+    $random = random_int(1,5);
+
+    // Critique du hero
+    if ( $random == 1 ) {
+        echo "COUP CRITIQUE ! <br>  ";
+        $lieutenant->combat(5*$hero->damage());
+        echo "Le chef a desormais : ", $lieutenant->hp ," hp <br>"; 
+        $hero->combat($lieutenant->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+        
+    } 
+    // Bonus hp;
+    if ( $random == 2 ) {
+        // Bonus hp pour le hero
+        $hero->bonushp();
+        echo "GAIN D'ARMURE ET COMBAT <br>";
+        $lieutenant->combat($hero->damage());
+        echo "Le chef a desormais : ", $lieutenant->hp ," hp <br>"; 
+        $hero->combat($chef->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+       
+    }
+    // Bonus armor
+    if ( $random == 3 ) {
+        echo "GAIN D'ARMURE ET COMBAT <br>";
+        // Bonus armure pour le hero
+        $hero->bonusarmor();
+        $lieutenant->combat($hero->damage());
+        echo "Le lieutenant a desormais : ", $lieutenant->hp ," hp <br>"; 
+        $hero->combat($lieutenant->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+    }
+    // Echange de coup
+    if ( $random == 4 ) {
+        echo "ECHANGE DE COUP AVEC LE BOSS <br>";
+        $lieutenant->combat($hero->damage());
+        echo "Le chef a desormais : ", $lieutenant->hp ," hp <br>"; 
+        $hero->combat($lieutenant->damage());
+        echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
+    }
+
+    if ( $random == 5 ) {
+        echo "ESQUIVE DU HERO <br>";
+        $lieutenant->combat($hero->damage());
+        echo "Le lieutenant a desormais : ", $lieutenant->hp ," hp <br>"; 
+        echo "Notre hero a : ", $hero->hp , " hp car l'ennemi a utilisé trempette <br> <br>";
+    }
+
+    // If pour la victoire et la defaite
+
+    if  (( $lieutenant->hp <= 0) && ( $hero->hp <= 0) ) {
+
+        echo "<strong> Match nul ! </strong> <br> <br>";
+        $tour=500;
+
+    }
+    if ( $lieutenant->hp <= 0) {
+        echo "<strong> Victoire ! </strong> <br> <br>";
+        $tour=500;
+    } 
+    if ( $hero->hp <= 0) {
+        echo "<strong> Mort du heros ... Rip </strong> <br> <br>";
+        $tour=500;
+    }
+}
+
+
+
+
+
+
+
+
+/////////////////////////////////////////
+
+
+
+
+
+// Combat contre le boss en 5 tours
+ 
 echo "<strong> Combat contre Chef minion </strong> <br> <br>";
 
 for ($tour=1 ; $tour < 6 ; $tour++) 
 {
-    $random = random_int(1,4);
+    $random = random_int(1,5);
 
     // Critique du hero
     if ( $random == 1 ) {
@@ -40,6 +205,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
     } 
     // Bonus hp;
     if ( $random == 2 ) {
+        // Bonus hp pour le hero
         $hero->bonushp();
         echo "GAIN D'ARMURE ET COMBAT <br>";
         $chef->combat($hero->damage());
@@ -51,6 +217,7 @@ for ($tour=1 ; $tour < 6 ; $tour++)
     // Bonus armor
     if ( $random == 3 ) {
         echo "GAIN D'ARMURE ET COMBAT <br>";
+        // Bonus armure pour le hero
         $hero->bonusarmor();
         $chef->combat($hero->damage());
         echo "Le chef a desormais : ", $chef->hp ," hp <br>"; 
@@ -66,24 +233,40 @@ for ($tour=1 ; $tour < 6 ; $tour++)
         echo "Notre hero a desormais : ", $hero->hp , " hp <br> <br>";
     }
 
+    if ( $random == 5 ) {
+        echo "ESQUIVE DU HERO <br>";
+        $chef->combat($hero->damage());
+        echo "Le chef a desormais : ", $chef->hp ," hp <br>"; 
+        echo "Notre hero a : ", $hero->hp , " hp car l'ennemi a utilisé trempette <br> <br>";
+    }
+
+
     // If pour la victoire et la defaite
     
-    if ( $chef->hp <= 0) {
-        echo "<strong> Victoire ! </strong><br>";
+
+    if  (( $chef->hp <= 0) && ( $hero->hp <= 0) ) {
+
+        echo "<strong> Match nul ! </strong> <br>";
         $hero->hp = 200;
+        $chef->hp = 100;
         $tour=500;
+
     }
+    if ( $chef->hp <= 0) {
+        echo "<strong> J'ai gagné la bagarre ! </strong> <br>";
+        $tour=500;
+    } 
     if ( $hero->hp <= 0) {
-        echo "<strong> Mort du hero ... Rip </strong><br>";
+        echo "<strong> Mort du heros ... Rip </strong> <br>";
         $tour=500;
     }
 }
 
 
-// Bonus armure pour le hero
+
 //$hero->bonusarmor();
 
-// Bonus hp pour le hero
+
 //$hero->bonushp();
 
 // PARTIE HTML + JS
